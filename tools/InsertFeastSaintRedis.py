@@ -20,7 +20,7 @@ rc.set("test", "ok")
 rc.expire("test" ,10)
 value = rc.get("test")
 if value is None:
-  print "Could not connect to  Redis  " + redis_host + " port " + redis_port
+  print("Could not connect to  Redis  " + redis_host + " port " + redis_port)
   sys.exit(0) 
 
 class TransformCSV(csv.Dialect):
@@ -57,7 +57,7 @@ def insertsaintname():
       monthentry = element[2]
       group = dayentry+"-"+monthentry
       rediskeynamefeastedsaint = hashlib.md5(nameentryok+"feastedsaint").hexdigest()
-      print "NAME : "+nameentryok+ "HASH : "+rediskeynamefeastedsaint
+      print("NAME : "+nameentryok+ "HASH : "+rediskeynamefeastedsaint)
       rc.set(rediskeynamefeastedsaint, group)
 
 ###################
