@@ -7,5 +7,5 @@
 #
 
 clientip = web.ctx['ip']
-print clientip
+print(clientip)
 
